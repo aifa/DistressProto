@@ -1,4 +1,4 @@
-package com.afterhours.distressproto.location;
+package com.afterhours.distressproto.util.location;
 
 import android.app.Activity;
 import android.app.Dialog;
