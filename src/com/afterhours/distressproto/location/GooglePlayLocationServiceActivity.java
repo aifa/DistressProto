@@ -1,12 +1,10 @@
 package com.afterhours.distressproto.location;
 
-import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.content.IntentSender;
 import android.location.Location;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentActivity;
@@ -19,7 +17,6 @@ import com.google.android.gms.common.GooglePlayServicesClient.OnConnectionFailed
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.location.LocationClient;
 
-@TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class GooglePlayLocationServiceActivity extends FragmentActivity
 		implements ConnectionCallbacks, OnConnectionFailedListener {
 	private final static int CONNECTION_FAILURE_RESOLUTION_REQUEST = 9000;
@@ -107,9 +104,10 @@ public class GooglePlayLocationServiceActivity extends FragmentActivity
 
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
 		// Decide what to do based on the original request code
 		switch (requestCode) {
-
+		
 		case CONNECTION_FAILURE_RESOLUTION_REQUEST:
 			/*
 			 * If the result code is Activity.RESULT_OK, try to connect again
